@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.example.samuraitravel.entity.House;
-import com.example.samuraitravel.form.ReservationInputForm;
 import com.example.samuraitravel.service.HouseService;
 
 @Controller
@@ -83,7 +82,6 @@ public class HouseController {
 
 		House house = optionalHouse.get();
 		model.addAttribute("house", house);
-		model.addAttribute("reservationInputForm", new ReservationInputForm());
 
 		return "houses/show";
 	}
