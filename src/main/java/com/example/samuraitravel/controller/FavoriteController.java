@@ -82,7 +82,8 @@ public class FavoriteController {
 		Favorite favorite = optionalFavorite.get();
 		User user = userDetailsImpl.getUser();
 
-		if (!favorite.getHouse().equals(house) || !favorite.getUser().equals(user)) {
+		if (!favorite.getHouse().getId().equals(house.getId()) || !favorite.getUser().getId().equals(user.getId())) {
+
 			redirectAttributes.addFlashAttribute("errorMessage", "不正なアクセスです。");
 
 			return "redirect:/houses/{houseId}";
